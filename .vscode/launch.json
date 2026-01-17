@@ -1,0 +1,33 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug Go: eBPF Collector",
+      "type": "go",
+      "request": "launch",
+      "mode": "debug",
+      "program": "${workspaceFolder}/ebpf-collector/cmd/collector/main.go",
+      "env": {
+        "KAFKA_BROKERS": "localhost:9092"
+      },
+      "preLaunchTask": "go: build ebpf-collector"
+    },
+    {
+      "name": "Debug Python: Security Brain",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/security-brain/server.py",
+      "console": "integratedTerminal",
+      "env": {
+        "ANTHROPIC_API_KEY": "${env:ANTHROPIC_API_KEY}"
+      }
+    },
+    {
+      "name": "Debug Go: Tool Proxy",
+      "type": "go",
+      "request": "launch",
+      "mode": "debug",
+      "program": "${workspaceFolder}/tool-proxy/cmd/server/main.go"
+    }
+  ]
+}
